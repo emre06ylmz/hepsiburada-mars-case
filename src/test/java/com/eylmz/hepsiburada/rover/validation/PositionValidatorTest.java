@@ -1,7 +1,5 @@
 package com.eylmz.hepsiburada.rover.validation;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -12,6 +10,8 @@ import com.eylmz.hepsiburada.model.Position;
 import com.eylmz.hepsiburada.rover.Rover;
 import com.eylmz.hepsiburada.rover.RoverFactory;
 import com.eylmz.hepsiburada.rover.command.RoverCommandIterator;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 public class PositionValidatorTest {
@@ -34,9 +34,9 @@ public class PositionValidatorTest {
 
 		rover.setCurrentDirection(Direction.N);
 		rover.setPosition(new Position(1, 1));
-		assertEquals(true, positionValidator.isPositionValid(rover.getPlateau(), rover.findNextPosition()));
+        assertTrue(positionValidator.isPositionValid(rover.getPlateau(), rover.findNextPosition()));
 		rover.setPosition(new Position(2, 5));
-		assertEquals(false, positionValidator.isPositionValid(rover.getPlateau(), rover.findNextPosition()));
+        assertFalse(positionValidator.isPositionValid(rover.getPlateau(), rover.findNextPosition()));
 
 	}
 
@@ -58,9 +58,9 @@ public class PositionValidatorTest {
 
 		rover.setCurrentDirection(Direction.S);
 		rover.setPosition(new Position(1, 1));
-		assertEquals(true, positionValidator.isPositionValid(rover.getPlateau(), rover.findNextPosition()));
+        assertTrue(positionValidator.isPositionValid(rover.getPlateau(), rover.findNextPosition()));
 		rover.setPosition(new Position(4, 0));
-		assertEquals(false, positionValidator.isPositionValid(rover.getPlateau(), rover.findNextPosition()));
+        assertFalse(positionValidator.isPositionValid(rover.getPlateau(), rover.findNextPosition()));
 
 	}
 
@@ -82,9 +82,9 @@ public class PositionValidatorTest {
 
 		rover.setCurrentDirection(Direction.E);
 		rover.setPosition(new Position(1, 1));
-		assertEquals(true, positionValidator.isPositionValid(rover.getPlateau(), rover.findNextPosition()));
+        assertTrue(positionValidator.isPositionValid(rover.getPlateau(), rover.findNextPosition()));
 		rover.setPosition(new Position(5, 3));
-		assertEquals(false, positionValidator.isPositionValid(rover.getPlateau(), rover.findNextPosition()));
+        assertFalse(positionValidator.isPositionValid(rover.getPlateau(), rover.findNextPosition()));
 
 	}
 
@@ -106,9 +106,9 @@ public class PositionValidatorTest {
 
 		rover.setCurrentDirection(Direction.W);
 		rover.setPosition(new Position(1, 1));
-		assertEquals(true, positionValidator.isPositionValid(rover.getPlateau(), rover.findNextPosition()));
+        assertTrue(positionValidator.isPositionValid(rover.getPlateau(), rover.findNextPosition()));
 		rover.setPosition(new Position(0, 3));
-		assertEquals(false, positionValidator.isPositionValid(rover.getPlateau(), rover.findNextPosition()));
+        assertFalse(positionValidator.isPositionValid(rover.getPlateau(), rover.findNextPosition()));
 
 	}
 

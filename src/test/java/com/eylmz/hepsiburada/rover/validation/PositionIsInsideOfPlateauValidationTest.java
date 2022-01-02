@@ -1,12 +1,12 @@
 package com.eylmz.hepsiburada.rover.validation;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.eylmz.hepsiburada.model.Plateau;
 import com.eylmz.hepsiburada.model.Position;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 public class PositionIsInsideOfPlateauValidationTest {
@@ -21,7 +21,7 @@ public class PositionIsInsideOfPlateauValidationTest {
 
 		PositionIsInsideOfPlateauValidation positionIsInsideOfPlateauValidation = new PositionIsInsideOfPlateauValidation();
 
-		assertEquals(true, positionIsInsideOfPlateauValidation.isPositionValid(plateau, validPosition));
+		assertTrue(positionIsInsideOfPlateauValidation.isPositionValid(plateau, validPosition));
 	}
 
 	@Test
@@ -34,7 +34,7 @@ public class PositionIsInsideOfPlateauValidationTest {
 
 		PositionIsInsideOfPlateauValidation positionIsInsideOfPlateauValidation = new PositionIsInsideOfPlateauValidation();
 
-		assertEquals(false, positionIsInsideOfPlateauValidation.isPositionValid(plateau, inValidPosition));
+		assertFalse(positionIsInsideOfPlateauValidation.isPositionValid(plateau, inValidPosition));
 	}
 
 }

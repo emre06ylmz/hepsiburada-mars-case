@@ -1,7 +1,5 @@
 package com.eylmz.hepsiburada.rover.validation;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -12,6 +10,8 @@ import com.eylmz.hepsiburada.model.Position;
 import com.eylmz.hepsiburada.rover.Rover;
 import com.eylmz.hepsiburada.rover.RoverFactory;
 import com.eylmz.hepsiburada.rover.command.RoverCommandIterator;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 public class PositionIsEmptyValidationTest {
@@ -31,7 +31,7 @@ public class PositionIsEmptyValidationTest {
 
 		PositionIsEmptyValidation positionIsEmptyValidation = new PositionIsEmptyValidation();
 
-		assertEquals(true, positionIsEmptyValidation.isPositionValid(plateau, otherPosition));
+        assertTrue(positionIsEmptyValidation.isPositionValid(plateau, otherPosition));
 	}
 
 	@Test
@@ -48,7 +48,7 @@ public class PositionIsEmptyValidationTest {
 
 		PositionIsEmptyValidation positionIsEmptyValidation = new PositionIsEmptyValidation();
 
-		assertEquals(false, positionIsEmptyValidation.isPositionValid(plateau, roverPosition));
+		assertFalse(positionIsEmptyValidation.isPositionValid(plateau, roverPosition));
 	}
 
 }
