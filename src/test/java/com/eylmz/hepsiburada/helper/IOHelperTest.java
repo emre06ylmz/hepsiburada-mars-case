@@ -56,8 +56,10 @@ public class IOHelperTest {
 
 		Rover rover = new Rover(1, roverPosition, Direction.N, new Plateau(plateauPosition),
 				new RoverCommandIterator("LLM"), null);
+		rover.setPositionValidator(positionValidator);
 
 		when(roverFactory.createRover(anyInt(), anyObject(), anyObject(), anyObject(), anyObject())).thenReturn(rover);
+		when(positionValidator.isPositionValid(anyObject(), anyObject())).thenReturn(true);
 
 		Plateau plateau = ioHelper.readInput("src/test/resources/input.txt");
 		assertNotNull(plateau);
