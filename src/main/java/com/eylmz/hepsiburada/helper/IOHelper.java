@@ -28,7 +28,7 @@ public class IOHelper {
 	private RoverFactory roverFactory;
 
 	public Plateau readInput(String filePath) throws InvalidInputException {
-		Plateau plateau = null;
+		Plateau plateau;
 
 		logger.debug("input file path given as: " + filePath);
 

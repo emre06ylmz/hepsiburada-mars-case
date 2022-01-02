@@ -1,6 +1,6 @@
 # hepsiburada Mars Case
 
-This is a command line project which is an implementation of hepsiburada mars case study.
+This is a command line project which is an implementation of hepsiburada Mars case study.
 
 ## Detail of Project
 

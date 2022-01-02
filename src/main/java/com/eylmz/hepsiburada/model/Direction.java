@@ -8,9 +8,9 @@ public enum Direction {
 
 	N, E, S, W;
 
-	public static HashMap<Character, Direction> directions;
-	public static HashMap<Direction, Direction> leftOfDirection;
-	public static HashMap<Direction, Direction> rightOfDirection;
+	public static final HashMap<Character, Direction> directions;
+	public static final HashMap<Direction, Direction> leftOfDirection;
+	public static final HashMap<Direction, Direction> rightOfDirection;
 
 	static {
 		directions = new HashMap<>();

@@ -43,7 +43,7 @@ public class RoverControllerTest {
 	private CommandInterpreterContext commandInterpreterContext;
 
 	@BeforeAll
-	public void init() {
+    public void init() {
 		positionValidator = mock(PositionValidator.class);
 		commandInterpreterContext = mock(CommandInterpreterContext.class);
 		roverController = new RoverController();

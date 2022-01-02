@@ -8,7 +8,7 @@ public enum RoverCommand {
 
 	L, R, M;
 
-	public static HashMap<Character, RoverCommand> roverCommands;
+	public static final HashMap<Character, RoverCommand> roverCommands;
 
 	static {
 		roverCommands = new HashMap<>();

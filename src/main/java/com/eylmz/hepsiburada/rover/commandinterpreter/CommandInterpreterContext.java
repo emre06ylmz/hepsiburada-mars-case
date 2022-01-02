@@ -6,7 +6,7 @@ import com.eylmz.hepsiburada.rover.command.RoverCommand;
 
 public class CommandInterpreterContext {
 
-	private HashMap<RoverCommand, ICommandInterpreterStrategy> commandInterpreters;
+	private final HashMap<RoverCommand, ICommandInterpreterStrategy> commandInterpreters;
 
 	public CommandInterpreterContext() {
 		commandInterpreters = new HashMap<>();

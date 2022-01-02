@@ -1,8 +1,6 @@
 package com.eylmz.hepsiburada;
 
 import com.eylmz.hepsiburada.exception.InvalidInputException;
-import com.eylmz.hepsiburada.exception.WrongDirectionException;
-import com.eylmz.hepsiburada.exception.WrongRoverCommandException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +10,6 @@ import com.eylmz.hepsiburada.helper.IOHelper;
 import com.eylmz.hepsiburada.model.Plateau;
 import com.eylmz.hepsiburada.rover.Rover;
 import com.eylmz.hepsiburada.rover.controller.RoverController;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 @Component
 public class Runner {
@@ -36,8 +31,8 @@ public class Runner {
 			return;
 		}
 
-		// read input as plateau and landend rovers
-		Plateau plateau = null;
+		// read input as plateau and landed rovers
+		Plateau plateau;
 		try {
 			plateau = ioHelper.readInput(args[0]);
 
@@ -47,7 +42,7 @@ public class Runner {
 				roverController.driveRover(rover, rover.getRoverCommandIterator());
 			}
 		} catch (InvalidInputException e) {
-			logger.error("invalid input exception. deta,ils is: " + e.getMessage());
+			logger.error("invalid input exception. details is: " + e.getMessage());
 		}
 
 	}

@@ -24,13 +24,13 @@ public class RoverController implements IRoverController {
 
 	public void driveRover(Rover rover, RoverCommandIterator roverCommandIterator) {
 
-		logger.debug("rover-" + rover.getId() + " initial position: " + rover.toString());
+		logger.debug("rover-" + rover.getId() + " initial position: " + rover);
 
-		for (RoverCommandIterator i = roverCommandIterator; i.hasNext();) {
-			commandInterpreterContext.getCommandInterpreter(i.next()).interpretCommand(rover);
+		while (roverCommandIterator.hasNext()) {
+			commandInterpreterContext.getCommandInterpreter(roverCommandIterator.next()).interpretCommand(rover);
 		}
 
-		logger.debug("rover-" + rover.getId() + " last position: " + rover.toString());
+		logger.debug("rover-" + rover.getId() + " last position: " + rover);
 
 		logger.info(rover.toString());
 	}

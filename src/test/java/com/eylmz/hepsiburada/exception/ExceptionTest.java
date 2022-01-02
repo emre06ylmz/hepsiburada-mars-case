@@ -9,13 +9,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class ExceptionTest {
 
 	@Test
-	public void givenWrongCommandException_WhenCreated_ThenShouldReturnNotNul() throws WrongRoverCommandException {
+	public void givenWrongCommandException_WhenCreated_ThenShouldReturnNotNul() {
 		WrongRoverCommandException wrongCommandException = new WrongRoverCommandException("wrong command");
 		assertNotNull(wrongCommandException);
 	}
 
 	@Test
-	public void givenWrongDirectionException_WhenCreated_ThenShouldReturnNotNul() throws WrongRoverCommandException {
+	public void givenWrongDirectionException_WhenCreated_ThenShouldReturnNotNul() {
 		WrongDirectionException wrongDirectionException = new WrongDirectionException("wrong direction");
 		assertNotNull(wrongDirectionException);
 	}

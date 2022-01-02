@@ -6,15 +6,14 @@ import com.eylmz.hepsiburada.model.Plateau;
 import org.springframework.stereotype.Component;
 
 import com.eylmz.hepsiburada.model.Position;
-import com.eylmz.hepsiburada.rover.Rover;
 
 @Component
 public class PositionValidator {
 
-	private ArrayList<IPositionValidation> positionValidations;
+	private final ArrayList<IPositionValidation> positionValidations;
 
 	public PositionValidator() {
-		positionValidations = new ArrayList<IPositionValidation>();
+		positionValidations = new ArrayList<>();
 		positionValidations.add(new PositionIsEmptyValidation());
 		positionValidations.add(new PositionIsInsideOfPlateauValidation());
 	}

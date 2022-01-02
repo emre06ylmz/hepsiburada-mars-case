@@ -13,7 +13,7 @@ public class Plateau {
 
 	// position is used to store max X and Y value of plateau
 	private Position position;
-	private ArrayList<Rover> rovers = new ArrayList<Rover>();
+	private ArrayList<Rover> rovers = new ArrayList<>();
 
 	public Plateau(Position position) {
 		this.position = position;
